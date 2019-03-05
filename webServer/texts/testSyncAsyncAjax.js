@@ -18,8 +18,9 @@
                   success: function(){console.log('success callback func1() called!')},
                   complete: function() {console.log('complete callback func1() called!')},
             });
-  
         console.log('first ajax end!');
+
+
         console.log('second ajax start!');
         $.ajax({             
                   type: 'POST',
@@ -29,7 +30,7 @@
             });
   
         console.log('second ajax end!');
-        });
+
 
         console.log('third ajax start!');
         $.ajax( {
@@ -50,5 +51,7 @@
                   complete: function() {console.log('complete callback func4() called!')}, 
         });
         console.log('fourth ajax end!');
+        });
+
 
       }
