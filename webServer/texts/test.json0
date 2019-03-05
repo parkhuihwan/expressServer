@@ -1,0 +1,9 @@
+{
+	"testStr":"testStr",
+	"testInt" : 0 ,
+	"testBool" : true ,
+	"testObj":
+	{
+		"testObjVar":"testObjVar"
+	}
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html">
+  <meta charset="utf-8" />
+
+  <!--<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8888/text/styles.css">-->
+
+</head>
+
+<body onload="start();">
+  <div id="content"></div>
+
+  <audio id="song"></audio>
+
+  <script type="text/javascript" src="https://svcapi.gigagenie.ai/sdk/v1.0/js/gigagenie.js"></script>
+
+  <script>
+    function start() {
+
+
+
+      var audio = document.getElementById('song');
+      audio.src = 'https://3rdparty.developer.com/example/test.mp3';
+
+      var metainfo = {};
+      metainfo.media_type = 'podcast';
+      metainfo.title = 'title';
+      metainfo.description = 'this is description for Audio';
+      metainfo.artist = 'artist';
+      metainfo.imageurl = 'https://url.com/urlImage.png';
+      
+      //audio
+      audio.metainfo = JSON.stringify(metainfo);
+      console.log('audio.metainfo: '+audio.metainfo);
+      //audio.play();
+      
+
+
+      let b = JSON.parse('null');
+        console.log(JSON.stringify(b));
+      gigagenie.init({apikey:'apikey', keytype:'keytype'}, function(resultCd, resultMsg, extra){
+        let a = JSON.parse('null');
+        console.log(JSON.stringify(a));
+      })
+
+      
+/*
+      setTimeout(function () { sound.pause(); setTimeout(function () { sound.play(); }, 3000) }, 3000)
+
+      gigagenie.voice.onStreamingRecogResult = function (resultCd, resultMsg, extra) {
+        console.log("onSRR called! resultCd: " + resultCd + " / resultMsg: " + resultMsg + " / extra.result: " + extra.result + " / extra.text: " + extra.text + " / extra.word: " + extra.word);
+      }
+      
+      gigagenie.voice.onAppStatusChange = function(resultCd, resultMsg, extra){
+          console.log("onSRR called! resultCd: "+resultCd+" / resultMsg: "+ resultMsg+" / extra.result: "+  extra.result+" / extra.text: "+  extra.text+" / extra.word: "+  extra.word);
+      }
+      function voiceAction() {
+        console.log("voiceAction function is called!");
+      }
+      gigagenie.voice.onActionEvent = voiceAction;
+      var options = {};
+      options.mode = 1;
+      gigagenie.init(options, function () {
+        console.log("init!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+      });
+      gigagenie.voice.setStreamingRecognize(options, function () { console.log("setStreamingRecognize callback function is called!") });
+
+      setTimeout(function () {
+        gigagenie.voice.checkStreamingRecognize(undefined, function (resultCd, resultMsg, extra) {
+          console.log("onSRR called! resultCd: " + resultCd + " / resultMsg: " + resultMsg + " / extra.mode: " + extra.mode);
+        })
+      }, 10000);
+      */
+    }
+
+  </script>
+</body>
+
+</html>

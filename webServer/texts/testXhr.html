@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html">
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="http://127.0.0.1:8888/text/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="http://127.0.0.1:8888/text/testSyncAsyncAjax.js"></script>
+</head>
+
+<body onload="start();">
+  <div id="content"></div>
+
+  <script>
+/*
+    var i = 0;
+    //var url = 'http://127.0.0.1:8888/test.json';
+    var url = 'http://127.0.0.1:8888/text/test.json'
+    console.log("[HTML]start processing script!!");
+    // XMLHttpRequest 객체의 생성
+    var xhr = new XMLHttpRequest();
+    xhr.timeout = 3000;
+    function start() {
+      console.log('call sessionStorage.setItem()'+sessionStorage.setItem('key','value'));
+      console.log('call sessionStorage.getItem(): '+sessionStorage.getItem('key'));
+      for (; i < 10; i++) {
+      //sendXhr(i);
+      }
+      //changeLocation();
+      
+      console.log('start jquery!');
+      $(document).ready(function () {
+        // code ...
+        console.log('start jquery! 1. ready');
+      });
+
+      console.log('first ajax start!');
+      $.ajax({                
+                type: 'POST',
+                url: 'http://127.0.0.1:8888/syncPost',   
+                async : false,
+                success: function(){console.log('success callback func1() called!')},
+                complete: function() {console.log('complete callback func1() called!')},
+          });
+
+      console.log('first ajax end!');
+      console.log('second ajax start!');
+      $.ajax({             
+                type: 'POST',
+                url: 'http://127.0.0.1:8888/asyncPost',   
+                success: function(){console.log('success callback func2() called!')},
+                complete: function() {console.log('complete callback func2() called!')},
+          });
+
+      console.log('second ajax end!');
+    }
+    function sendXhr(i) {
+      // 비동기 방식으로 Request를 오픈한다
+      xhr.ontimeout = function () {
+        console.log("[HTML] timeout !! : " + i);
+      }
+      xhr.open('GET', url + '?index=' + i + '', true);
+      xhr.send();
+
+      // Event Handler
+      xhr.onreadystatechange = function () {
+        // 서버 응답 완료 && 정상 응답
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            console.log('success[' + i + ']' + JSON.stringify(xhr.responseText));
+            console.log('[' + xhr.status + ']: ' + xhr.statusText);
+            if (i < 9) {
+              i = i + 1;
+              //sendXhr(i);
+            }
+          }
+        }
+        else {
+          console.log('[' + xhr.status + ']:readyState ' + xhr.readyState);
+        }
+      };
+    }
+
+    function changeLocation() {
+      location.port = '8888';
+      location.href = '/text/testNext.html';
+
+      console.log("This log dose not need to be displayed on console!! port: " + location.port);
+    }
+
+    */
+  </script>
+</body>
+
+</html>
