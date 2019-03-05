@@ -31,6 +31,7 @@
         console.log('second ajax end!');
         });
 
+        console.log('third ajax start!');
         $.ajax( {
                   type: 'POST',
                   url: 'http://192.168.0.103:8888/asyncPost',   
@@ -39,5 +40,6 @@
         })         
         .then(function() { console.log('done'); }, function() { console.log('fail'); })         
         .catch(function() { console.log('always'); }); 
+        console.log('third ajax end!');
 
       }
