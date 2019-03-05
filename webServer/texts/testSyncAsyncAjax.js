@@ -1,5 +1,5 @@
 
-    function start() {
+    async function start() {
         /*console.log('call sessionStorage.setItem()'+sessionStorage.setItem('key','value'));
         console.log('call sessionStorage.getItem(): '+sessionStorage.getItem('key'));
         for (; i < 10; i++) {
@@ -35,11 +35,20 @@
         $.ajax( {
                   type: 'POST',
                   url: 'http://192.168.0.103:8888/asyncPost',   
-                  success: function(){console.log('success callback func2() called!')},
-                  complete: function() {console.log('complete callback func2() called!')}, 
+                  success: function(){console.log('success callback func3() called!')},
+                  complete: function() {console.log('complete callback func3() called!')}, 
         })         
         .then(function() { console.log('done'); }, function() { console.log('fail'); })         
         .catch(function() { console.log('always'); }); 
         console.log('third ajax end!');
+
+        console.log('fourth ajax start!');
+        await $.ajax( {
+                  type: 'POST',
+                  url: 'http://192.168.0.103:8888/asyncPost',   
+                  success: function(){console.log('success callback func4() called!')},
+                  complete: function() {console.log('complete callback func4() called!')}, 
+        });
+        console.log('fourth ajax end!');
 
       }
